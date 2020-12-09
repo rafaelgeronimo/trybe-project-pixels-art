@@ -2,7 +2,7 @@ const pixelBoard = document.querySelector('#pixel-board');
 let selectedColor = 'rgb(0 , 0 , 0)';
 const colorBox = document.getElementsByClassName('color');
 const clearButton = document.querySelector('#clear-board');
-
+const eraserButton = document.querySelector('#eraser-tool');
 
 // Função para criar a paleta de cores selecionáveis
 function createColor() {
@@ -74,13 +74,18 @@ function clearCanvas() {
   }
 }
 
+function eraserTool() {
+  selectedColor = 'rgb(255 , 255 , 255)';
+}
+
 clearButton.addEventListener('click', clearCanvas);
+eraserButton.addEventListener('click', eraserTool);
 
 function checkBoardSize(boardSize) {
   if (boardSize < 5) {
     boardSize = 5;
-  } else if (boardSize > 50) {
-    boardSize = 50;
+  } else if (boardSize > 75) {
+    boardSize = 75;
   }
   pixelBoard.innerHTML = '';
   drawPixelBoard(boardSize);
@@ -99,6 +104,6 @@ generateBoard.addEventListener('click', function () {
 
 window.onload = function () {
   createColor();
-  drawPixelBoard(5);
+  drawPixelBoard(25);
   paintPixel();
 };
