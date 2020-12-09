@@ -3,6 +3,7 @@ let selectedColor = 'rgb(0 , 0 , 0)';
 const colorBox = document.getElementsByClassName('color');
 const clearButton = document.querySelector('#clear-board');
 const eraserButton = document.querySelector('#eraser-tool');
+const generateColors = document.querySelector('#generate-colors');
 
 // Função para criar a paleta de cores selecionáveis
 function createColor() {
@@ -80,6 +81,7 @@ function eraserTool() {
 
 clearButton.addEventListener('click', clearCanvas);
 eraserButton.addEventListener('click', eraserTool);
+generateColors.addEventListener('click', createColor);
 
 function checkBoardSize(boardSize) {
   if (boardSize < 5) {
