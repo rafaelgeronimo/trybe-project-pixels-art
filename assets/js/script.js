@@ -60,6 +60,7 @@ function paintPixel() {
       const paintClickedPixel = pixelBoard.children[index].children[pixel];
       paintClickedPixel.onclick = function () {
         paintClickedPixel.style.backgroundColor = selectedColor;
+        paintClickedPixel.style.borderColor = selectedColor;
       };
     }
   }
